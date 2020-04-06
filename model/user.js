@@ -9,6 +9,14 @@ const UserSchema = new Schema({
 });
 
 UserSchema.pre('save', function(next) {
+    let user = this;
+    if (!user.isModified('password')) return next();
+
+    bcrypt.hash(user.password, 10, (err, encrypted) => {
+        user.password = encrypted;
+        return next();
+    });
+
 
 });
 
