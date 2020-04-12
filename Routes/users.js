@@ -3,13 +3,12 @@ const router = express.Router();
 const Users = require('../model/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config');
 
 // auxiliary functions
     const createUserToken = (userId) => {
-        return jwt.sign({id: userId}, '13dnms', { expiresIn: '7d'});
+        return jwt.sign({id: userId}, config.jwt_pass, { expiresIn: config.jwt_expires_in});
     };
-//
-
 
 router.get('/', async (req, res) => {
    try {
