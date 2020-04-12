@@ -3,8 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const url = 'mongodb+srv://admin_user:Umbre11@@cluster0-kb8zz.mongodb.net/test?retryWrites=true&w=majority';
-// const url = 'mongodb+srv://---@cluster0-kb8zz.mongodb.net/test?retryWrites=true&w=majority';
+const url = 'mongodb+srv://---@cluster0-kb8zz.mongodb.net/test?retryWrites=true&w=majority';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 // const options = {reconnectTries: Number.MAX_VALUE, reconnectInterval: 500, poolSize: 5, useNewUrlParser: true};
 
